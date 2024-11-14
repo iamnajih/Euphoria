@@ -68,31 +68,31 @@ const womenCategories=[
 
 
 const render=()=>{
-    const fourth=document.getElementById("fourth");
-    const fifth=document.getElementById("fifth");
+    const menContent=document.getElementById("men-content");
+    const womenContent=document.getElementById("women-content");
 
     menCategories.forEach(item=>{
-const menCategoryCard=document.createElement("div");
+    const menCategoryCard=document.createElement("div");
+    menCategoryCard.classList.add("item")
 
         
         menCategoryCard.innerHTML=`
-                <img src=${item.image} /><br/>
-                <b>${item.type}</b>
-                <div class="frexpwrap">
-                    <a href="" class="frexp">Explore Now</a>
-                <a href="" class="frarrow">
-                    <img src="./assets/arrow-right.svg"/>
-                </a>
-                </div>
+                    <img src=${item.image} /><br/>
+                    <b>${item.type}</b>
+                    <div class="frexpwrap">
+                        <a href="" class="frexp">Explore Now</a>
+                    <a href="" class="frarrow">
+                        <img src="./assets/arrow-right.svg"/>
+                    </a>
+                    </div>
             `;
 
-            fourth.appendChild(menCategoryCard)
+            menContent.appendChild(menCategoryCard)
 
     });
     womenCategories.forEach(item=>{
         const womenCategoryCard=document.createElement("div");
-        
-                
+        womenCategoryCard.classList.add("item");
                 womenCategoryCard.innerHTML=`
                         <img src=${item.image} /><br/>
                 <b>${item.type}</b>
@@ -104,7 +104,7 @@ const menCategoryCard=document.createElement("div");
                 </div>
                     `;
         
-                    fifth.appendChild(womenCategoryCard)
+                    womenContent.appendChild(womenCategoryCard)
         
             });
 }
